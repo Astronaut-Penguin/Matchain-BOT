@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "charset": "utf8",
+        "forceConsistentCasingInFileNames": true,
+        "newLine": "lf",
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "noUncheckedIndexedAccess": true,
+        "noUnusedParameters": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "target": "ES2019",
+        "module" : "ESNEXT",
+        "moduleResolution": "node",
+        "paths": {
+            "*": [
+              "./node_modules/*",
+              "./*"
+            ]
+          }
+        },
+        "include": [
+          "./bot"
+        ]
+}
