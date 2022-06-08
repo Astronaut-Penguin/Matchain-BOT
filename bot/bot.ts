@@ -31,12 +31,7 @@ const bot = new Bot<MyContext>(process.env.BOT_API!, {
 // Install session middleware, and define the initial session value.
 function initial(): SessionData {
     return {
-        item: { name: 'manos', damage: 1, damageType: 0 },
-        points: 0,
-        heroName: 'Don nadie',
         language: 0, //ES by default
-        wallet: '',
-        privateKey: '',
     }
 }
 
