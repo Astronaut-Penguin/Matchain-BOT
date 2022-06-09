@@ -28,6 +28,17 @@ const bot = new Bot<MyContext>(process.env.BOT_API!, {
     },
 }) // <-- place your bot token in this string
 
+// Create a keyboard for the webapp
+const keyboard = new InlineKeyboard()
+    .webApp('Matchain Home', 'https://astronaut-penguin-test.netlify.app/')
+    .row()
+    .url(
+        'I wanna learn!',
+        'https://github.com/Astronaut-Penguin/Matchain-Showroom-Template'
+    )
+    .row()
+    .url('Lets Play!', 'https://github.com/Astronaut-Penguin/Matchain-TONCore')
+
 // Install session middleware, and define the initial session value.
 function initial(): SessionData {
     return {
@@ -37,7 +48,14 @@ function initial(): SessionData {
 
 bot.use(session({ initial }))
 
-bot.command('start', async ctx => {})
+bot.command('start', async ctx => {
+    await ctx.reply(
+        'Welcome to Matchain! this bot its made for you to play, learn to develop or to know more about us with less clicks!',
+        {
+            reply_markup: keyboard,
+        }
+    )
+})
 
 // Start the bot (using long polling)
 bot.start()
